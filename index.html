@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alex Westfall: See Through Booklet</title>
+<meta name="description" content="Alex Westfall: See Through — a risograph booklet with photographs by Alex Westfall and texts by Marian Chudnovsky, Stella Rae Binion, Kenzie Floyd, Lauren Lee, Selene Medina and Matthew Westfall. Published by Isolde NYC, 2026.">
+<meta property="og:type" content="book">
+<meta property="og:title" content="Alex Westfall: See Through Booklet">
+<meta property="og:description" content="Alex Westfall: See Through — a risograph booklet with photographs by Alex Westfall and texts by Marian Chudnovsky, Stella Rae Binion, Kenzie Floyd, Lauren Lee, Selene Medina and Matthew Westfall. Published by Isolde NYC, 2026.">
+<meta property="og:image" content="pages/cover-screen.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"See Through","author":{"@type":"Person","name":"Alex Westfall"},"contributor":[{"@type":"Person","name":"Marian Chudnovsky"},{"@type":"Person","name":"Stella Rae Binion"},{"@type":"Person","name":"Kenzie Floyd"},{"@type":"Person","name":"Lauren Lee"},{"@type":"Person","name":"Selene Medina"},{"@type":"Person","name":"Matthew Westfall"}],"editor":[{"@type":"Person","name":"Talia Markowitz"},{"@type":"Person","name":"Genevieve Nollinger"},{"@type":"Person","name":"Alex Westfall"}],"publisher":{"@type":"Organization","name":"Isolde","url":"https://www.isolde.nyc"},"datePublished":"2026","bookFormat":"https://schema.org/Paperback","numberOfPages":40,"inLanguage":"en","description":"Alex Westfall: See Through — a risograph booklet with photographs by Alex Westfall and texts by Marian Chudnovsky, Stella Rae Binion, Kenzie Floyd, Lauren Lee, Selene Medina and Matthew Westfall. Published by Isolde NYC, 2026."}</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;background:#e4e5e7;}
+a{color:inherit;} a:hover{color:inherit;opacity:0.7;}
+</style>
+</helmet>
+<div style="height:100dvh;display:flex;flex-direction:column;background:{{ bg }};color:{{ ink }};font-family:'Goudy Bookletter 1911',serif;font-size:15px;letter-spacing:0.01em;box-sizing:border-box;">
+
+  <sc-if value="{{ showTitle }}" hint-placeholder-val="{{ true }}"><header style="display:flex;justify-content:flex-start;align-items:baseline;flex-wrap:wrap;gap:4px 14px;padding:18px 28px 0;">
+    <span style="font-family:'Goudy Bookletter 1911',serif;font-size:18px;letter-spacing:0.01em;">Alex Westfall: <em style="letter-spacing:0.01em;">See Through</em> Booklet</span>
+  </header></sc-if>
+  <main onTouchStart="{{ onTouchStart }}" onTouchEnd="{{ onTouchEnd }}" style="flex:1;min-height:0;display:grid;grid-template-columns:{{ cols }};align-items:center;padding:{{ mainPad }};gap:8px;">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><button onClick="{{ prev }}" disabled="{{ atStart }}" aria-label="Previous" style="justify-self:center;width:48px;height:48px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;font-size:18px;cursor:pointer;opacity:{{ prevOpacity }};" style-hover="background:rgba(127,127,127,0.12);">←</button></sc-if>
+    <div style="height:100%;min-height:0;display:flex;align-items:center;justify-content:center;">
+      <img ref="{{ mainRef }}" alt="{{ current.alt }}" onClick="{{ openZoom }}" style="display:block;box-sizing:border-box;max-width:100%;max-height:100%;object-fit:contain;padding:{{ matPad }};background:{{ matBg }};box-shadow:{{ imgShadow }};transform:{{ imgTilt }};transition:transform .4s ease, box-shadow .4s ease;cursor:zoom-in;">
+    </div>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><button onClick="{{ next }}" disabled="{{ atEnd }}" aria-label="Next" style="justify-self:center;width:48px;height:48px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;font-size:18px;cursor:pointer;opacity:{{ nextOpacity }};" style-hover="background:rgba(127,127,127,0.12);">→</button></sc-if>
+  </main>
+
+  <footer style="display:flex;justify-content:safe center;align-items:center;gap:20px;padding:0 28px 16px;flex-wrap:wrap;min-width:0;">
+    <sc-if value="{{ showThumbs }}" hint-placeholder-val="{{ true }}">
+      <nav ref="{{ navRef }}" style="display:flex;gap:10px;align-items:flex-end;max-width:100%;min-width:0;overflow-x:auto;scrollbar-width:thin;padding:4px 4px 6px;box-sizing:border-box;">
+        <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="3">
+          <button onClick="{{ t.go }}" aria-label="{{ t.alt }}" style="flex-shrink:0;padding:0;border:0;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;color:inherit;font:inherit;">
+            <img ref="{{ t.ref }}" alt="" decoding="async" style="height:{{ thumbH }};display:block;outline:{{ t.outline }};outline-offset:3px;opacity:{{ t.opacity }};">
+            <span style="font-size:13px;opacity:{{ t.opacity }};">{{ t.short }}</span>
+          </button>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <div style="display:flex;gap:16px;align-items:center;opacity:0.8;flex-wrap:wrap;justify-content:center;">
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ prev }}" disabled="{{ atStart }}" aria-label="Previous" style="width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;font-size:16px;cursor:pointer;opacity:{{ prevOpacity }};">←</button></sc-if>
+      <button onClick="{{ openZoom }}" style="border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:8px 0;text-decoration:underline;text-underline-offset:3px;">Zoom</button>
+      <sc-if value="{{ canFull }}" hint-placeholder-val="{{ true }}"><button onClick="{{ fullscreen }}" style="border:0;background:transparent;color:inherit;font:inherit;cursor:pointer;padding:8px 0;text-decoration:underline;text-underline-offset:3px;">Fullscreen</button></sc-if>
+      <a href="See-Through-Alex-Westfall.pdf" download="" target="_blank" rel="noopener" style="color:inherit;padding:8px 0;text-decoration:underline;text-underline-offset:3px;">Download PDF</a>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><button onClick="{{ next }}" disabled="{{ atEnd }}" aria-label="Next" style="width:44px;height:44px;border-radius:50%;border:1px solid currentColor;background:transparent;color:inherit;font-size:16px;cursor:pointer;opacity:{{ nextOpacity }};">→</button></sc-if>
+    </div>
+  </footer>
+
+  <sc-if value="{{ zoomed }}" hint-placeholder-val="{{ false }}">
+    <div onMouseDown="{{ dragStart }}" onMouseMove="{{ dragMove }}" onMouseUp="{{ dragEnd }}" onMouseLeave="{{ dragEnd }}" style="position:fixed;inset:0;background:#141517;overflow:auto;z-index:10;cursor:grab;">
+      <img ref="{{ zoomRef }}" alt="{{ current.alt }}" draggable="false" decoding="async" style="display:block;width:{{ zoomWidth }};max-width:none;margin:0 auto;user-select:none;">
+      <button onClick="{{ closeZoom }}" style="position:fixed;top:16px;right:16px;height:44px;padding:0 18px;border-radius:22px;border:1px solid #e9e7e2;background:#141517;color:#e9e7e2;font-family:'Goudy Bookletter 1911',serif;font-size:15px;cursor:pointer;">Close ✕</button>
+    </div>
+  </sc-if>
+</div>
+<article aria-label="Booklet text" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:normal;margin:-1px;padding:0;border:0;">
+<h1>Alex Westfall: See Through</h1>
+<p>Risograph booklet published by Isolde NYC, 2026, on the occasion of See Through, Alex Westfall’s first solo exhibition at Isolde. With contributions by Marian Chudnovsky, Stella Rae Binion, Kenzie Floyd, Lauren Lee, Selene Medina, Alex Westfall and Matthew Westfall.</p>
+<section>
+<h2>Cover</h2>
+<p>ALEX WESTFALL:</p>
+<p>SEE THROUGH</p>
+</section>
+<section>
+<h2>p. 1</h2>
+<p>STELLA RAE BINION is a Chicago-based poet, filmmaker, printmaker, and bodywork practitioner. Their practice includes poetic research, investigations within fugitivity and the Black outdoors, honor work as prayer and divination, witnessing through language and imaging, and the celebration and protection of Black queer people.</p>
+<p>MARIAN CHUDNOVSKY is a researcher, writer, and curator from Queens, New York. She is the Research and Administrative Coordinator at Wendy’s Subway and Curatorial Assistant at the Center for Art, Research and Alliances (CARA).</p>
+<p>KENZIE FLOYD is a photographer and teaching artist based in Los Angeles. Her work is informed by movement, ritual, and collective effervescence.</p>
+<p>LAUREN LEE is a writer of fiction and non-fiction. She lives in Manhattan where she is currently a student of philosophy.</p>
+<p>SELENE MEDINA is a student and artist based in Northeast Los Angeles. They recently graduated with a B.A. in Women’s, Gender, and Sexuality Studies and Sociology from Cal State LA. They are a member of the Youth Advisory Council at Las Fotos Project. The work they create is inspired by her family, friends, and community.</p>
+<p>ALEX WESTFALL was born and raised in Manila, Philippines. She printed her first photograph in the darkroom at age 11. See Through is her first solo exhibition.</p>
+<p>MATTHEW WESTFALL is a retired multilateral development banker, urban planner, and documentary filmmaker. He now operates a family-owned craft distillery and apiary while working on his second book on Philippine history. He graduated from Brookline High School in 1979.</p>
+</section>
+<section>
+<h2>pp. 2–3</h2>
+<p>Photo spread, pages 2–3</p>
+</section>
+<section>
+<h2>pp. 4–5</h2>
+<p>MARIAN CHUDNOVSKY An Imperfect Memory</p>
+<p>DOUBLE NEGATIVE: a conversation between ALEX WESTFALL and her father MATTHEW</p>
+<p>SELENE MEDINA Hand Through a Lens</p>
+<p>6 — 13</p>
+<p>STELLA RAE BINION (Insert) residue (origin)</p>
+<p>14 — 29</p>
+<p>LAUREN LEE 30 — 33 Cause of the Cause</p>
+<p>34 — 35</p>
+<p>KENZIE FLOYD 36 — 39 Time Travel</p>
+</section>
+<section>
+<h2>pp. 6–7</h2>
+<p>MARIAN CHUDNOVSKY</p>
+<p>An Imperfect Memory</p>
+<p>If water has a perfect memory, per Morrison, then Alex Westfall’s See Through invites us inside the camera’s imperfect one. In combining, excising, and working iteratively with photographs taken over the course of years, Westfall exposes the tears in time’s fabric.</p>
+<p>Each image is a small, intimate aperture: a shadow, a fragment, a dream we misremembered, a gesture toward infinity or perpetual iteration. In other words, an image that knows that there is no such thing as a singular memory that can be held forever.</p>
+<p>1. “You know, they straightened out the Mississippi River in places, to make room for houses and livable acreage. Occasionally the river floods these places. ‘Floods’ is the word they use, but in fact it is not flooding; it is remembering. Remembering where it used to be. All water has a perfect memory and is forever trying to get back to where it was.” Toni Morrison, “The Site of Memory,” in Inventing the Truth: The Art and Craft of Memoir, 2nd ed., ed. William Zinsser (Boston and New York: Houghton Mifflin, 1995), 99.</p>
+<p>2. Throughout this essay, I assume a “curatorial voice” and refer to the artist as Westfall. In my daily life I refer to the artist as Alex, my dear friend of many years. Here, I perform for you the role of the art writer, but I am much more comfortable performing the role of Alex’s friend.</p>
+<p>3. Hervé Guibert, “A Man’s Secrets,” trans. Jeffrey Zuckerman, The MIT Press Reader, October 27, 2022, https://thereader.mitpress.mit.edu/ herve-guibert-a-mans-secrets/. Excerpted from Written in Invisible Ink: Selected Stories (Los Angeles: Semiotext(e), 2020).</p>
+<p>In 1991, soon after his friend Michel Foucault died of AIDS, photographer Hervé Guibert wrote the story “A Man’s Secrets.” In it, a character based loosely on Foucault has his buried childhood memories excavated by a surgeon, a medical procedure meant to reveal an original grief. Of the story, the photographer said: “I disguised [Foucault’s] character, my thoughts of him were of absence, of lack. Were unbearable. His very image became wholly evanescent. I so needed this friendship to live that, when he was dead, I had forgotten it.”</p>
+<p>Like Guibert, in our grief we reach for the shadows of what was once with us, that which we could never properly hold—the loved one, the person who has left us. In every moment of attempted preservation and closeness, we are also always at a loss, always increasing our distance from the object of memory.</p>
+<p>Guibert provides us with a document of losing to hold. That is to say, a recognition that we will always forget.</p>
+<p>A shadow is also a portrait. The negative after-image of a body’s space in the light. The way it flashes like a blip on a screen, there for one moment and then suddenly gone.</p>
+<p>In Westfall’s images, shadows are imbued with a deep sense of intimacy. When we see a glimpse of the artist’s grandmother’s shadow, rendered through an Instagram post, we are aware that her body is recorded through layers and layers of abstraction. We see her form through her absence.</p>
+</section>
+<section>
+<h2>pp. 8–9</h2>
+<p>One image: a young child runs to a man, his arms outstretched. Someone snaps a photo. Years later, the artist transposes the document on top of a self-portrait: the photographer in the process of taking a picture. In this way, the family memory is contextualized within the broader apparatus of documentation. Frames accumulate in concentric circles that extend outward continually until the viewer is also included and the memory becomes subject to our projection.</p>
+<p>The archival turn, a term widely attributed to anthropologist Ann Laura Stoler, marks contemporary art and cultural criticism’s active contention with the archive not as a passive repository, but as a structure shaped by colonial violence. In the last decade or so, however, it has increasingly referred to artists’ and curators’ use of the archive as a form to be brought into the art object and exhibition space. At its worst, it operates as collection for collection’s sake, a fetish for a citational aesthetic over depth of context. Amid this fixation on the physical archive, we remain caught in the crosshairs of the “born-digital,” where nearly all information is preserved in repositories that generate income for billionaires. And so our grief, too, is profitable. The images we share of loved ones to commemorate their passing, the documentation of a brutal and ongoing genocide in Gaza: each becomes vulnerable to monetization via discreet algorithms.</p>
+<p>Of course, none of this is new information or unique analysis of the politics of memory. These are perpetual problems reshaped within the current moment. We confront, again and again, the structures that determine whose stories are preserved, to what end, and in what manner.</p>
+</section>
+<section>
+<h2>pp. 10–11</h2>
+<p>If this tangent serves any purpose, I suppose it functions as a note to self: a reminder that the terrain of memory remains a site for ongoing struggle. Its loss must never be considered a forgone conclusion. When we surrender the landscape of the archive to those who actively want to deem certain memories “surplus,” we accept the material conditions imposed upon us by empire and capital. We surrender our ghosts.</p>
+<p>Another image: the artist’s thumb pressed upon a photograph of a hand. Layers of embodiment, holding. We are with the artist as she considers her body of work. She shows us her means of production, her images, but also her hands, which print the images, tear the paper, fold its corners, tack them to the wall, rip them up, place them in acid-free sleeves, send them in the mail to friends, scan them onto her desktop.</p>
+<p>Westfall’s photographs reveal to us an alternative archival model which embraces repetition, the partial, the fleeting, the inherently unknowable.</p>
+<p>These pictures hold within them the grief of return— the specific melancholy of journeying back to the same picture after much time has passed and recognizing that the friend, the lover, the object of study, the historical moment depicted, has extended further and further away. The remembrance has faded, its contours morphed. The fallibility of the archive becomes part of the process of encounter.</p>
+<p>Here, time collapses in on itself. And with it, we glimpse the tears in the netting of how images are rendered to us.</p>
+</section>
+<section>
+<h2>pp. 12–13</h2>
+<p>The rays of light remain refracted, even if always at a distance.</p>
+<p>A friend recalls that she is sometimes scared to show photos of her loved ones who have died for fear the other’s gaze will dilute her memory. As if, somehow, obscuring the image from view will allow her to hold them just a bit closer. These too are the conditions of the archive.</p>
+<p>residue (origin)</p>
+<p>Inside of a house I never lived<br>i begin<br>a form emerging<br>from shallow pooling<br>made of reflection<br>a glinting only possible<br>in the briefness of now<br>quick<br>hold this document<br>folded tightly unfolded<br>creased and creased again<br>a recollection<br>the fissured ridge across a life<br>truth telling dog eared<br>reaching toward thd black of sky<br>just beyond fingertips<br>a flash and I begin all over<br>witnessing<br>matter susceptible to the sharpness of light<br>silver enamel shadow lace<br>put the piece of paper up against the sun<br>before it steams dry take one last look<br>whatever remains<br>may smudge<br>like memory</p>
+</section>
+<section>
+<h2>pp. 14–15</h2>
+<p>DOUBLE NEGATIVE: a conversation between</p>
+<p>ALEX WESTFALL and her father MATTHEW</p>
+<p>AW: Do you recognize some of these images?</p>
+<p>MW:</p>
+<p>Oh, my, it’s my hand... and then there’s that face with a mustache.</p>
+<p>Of course I do: the ones I took.</p>
+<p>My wedding. That’s a barong.</p>
+<p>That window.</p>
+<p>Is that me?</p>
+<p>No? Okay.</p>
+<p>There’s water, windows, a house, water. Looking out the window.</p>
+<p>A shredded photograph of two people walking.</p>
+<p>MW: Yes, I know exactly what that is.</p>
+</section>
+<section>
+<h2>pp. 16–17</h2>
+<p>AW: No, that’s not your photo.</p>
+<p>MW: You sure? Then there’s trees. Then there’s a folding accordion thing with aluminum foil. That’s by you, maybe. Then there’s soccer. That’s definitely by me. But you did something to it. You altered it. Then there are windows. A lot of windows. Then there’s something in water. Then there’s a school campus. There’s that hand again. Then there’s you running to me. And the picture from my wedding. All I remember is that the church was filled with people, many of whom I didn’t know or had never met. The photo captures the moment my dad and mom, who flew into Manila from Boston for the wedding, were walking me to the altar, followed by the flower girls, the ring bearer, and then your mother and her parents. It was hot, super humid. I was terrified and dripping with sweat. It was so nerve-wracking that your mom and I have never actually opened our wedding albums to look at the photos. They remain sealed in brown paper wrap to this day.</p>
+<p>AW: Can you tell me the story of how these negatives came to be?</p>
+<p>MW: In 1979 we had a little darkroom in our house in Brookline, Massachusetts. It was on the second floor, and we had an enlarger and all the chemicals. I had my Nikon. My senior year at Brookline High, I took a black-and-white photography class. I bought a Vivitar Series 1 70-210mm zoom lens. It was my biggest acquisition in my life up to that point. I was waiting tables, so I had extra cash. I bought this lens and then I ended up becoming an impromptu yearbook photographer. I don’t even think I was official. I just shot pictures: my first girlfriend, big sports games, prom. There was a lot going on that senior year: everyone applying to college, our SATs . . . so there was this sense of community. The camera was an instrumental part of my engagement with that.</p>
+</section>
+<section>
+<h2>pp. 18–19</h2>
+<p>The thing about this Vivitar zoom lens: I took it to college, the Peace Corps, and then I ultimately sold it because I needed the money. It was a way to navigate high school and enter social spaces that I may not have otherwise been willing to enter. I was socially awkward, a little uncomfortable. It allowed me to have a standoff of 15, 20, 30 feet, to take a picture of one of the girls that I admired without having to get close to her—terrifying. Or go up to the bullies or tough guys who, had I walked up to them, would have nothing to say to me but an insult. But by pointing a camera at them, they would pose—and all of a sudden, I was their best friend. At sports games, at halftime, everyone was hamming it up for me.</p>
+<p>Now, I was introverted. I never really fit in. When I walked around with that camera, it was like a shield, a superpower. You can seem really busy and look like you belong. You’re focusing it, you’re winding the film, you’re reloading. If I didn’t have that camera, I would just be standing there twiddling my thumbs and they’d be like, What are you looking at?</p>
+<p>A lot of those people I photographed never spoke a word to me. They live inside my head, and they probably don’t even remember my existence on the planet. They’re in my dreams.</p>
+<p>Every day was just fun. We weren’t worried about the world ending or starving. We didn’t even read the newspapers, and nobody cared about anything. What’s the movie on Saturday night? That was the big thing.</p>
+<p>The negatives went into this little black three ring binder, and then I went off to Colorado for undergrad. I gave them to my dad, who moved them to his basement in Canton, Massachusetts. During a rainstorm, his basement flooded and all my boxes were destroyed. That’s how those negatives got damaged. I came back at some point and dug them up, and then you found them.</p>
+<p>MW: So do you want to go through all of these photos really quickly, the ones I took when I was a senior in high school?</p>
+<p>AW: Sure.</p>
+<p>MW: There’s a lot here.</p>
+<p>I know all these guys.</p>
+<p>He now runs a cupcake shop up in Vermont.</p>
+</section>
+<section>
+<h2>pp. 20–21</h2>
+<p>She was the charming, lovely girl who was the best friend of the girl I had a crush on.</p>
+<p>I remember these guys. That’s another guy.</p>
+<p>What’s his name?</p>
+<p>This is lacrosse.</p>
+<p>That’s the coach. He was a bit of a knucklehead.</p>
+<p>I think he died about 10 years ago.</p>
+<p>That’s one of my best friends—we worked at a restaurant together.</p>
+<p>That’s his sister.</p>
+<p>She took a picture of me taking a picture of her.</p>
+<p>That’s the football star quarterback.</p>
+<p>The thrill of victory. The agony of defeat. I guess these guys lost this game.</p>
+<p>That’s a couple of groupies out in the stands.</p>
+</section>
+<section>
+<h2>pp. 22–23</h2>
+<p>A couple of the girls’ names escape me.</p>
+<p>Oh, he was a good friend of mine. We would sit up on the roof of his garage, smoke dope, and look at the sunset.</p>
+<p>The dope back then was really weak. We weren’t really getting high; we were just hanging out.</p>
+<p>See all the water damage?</p>
+<p>This is my high school girlfriend.</p>
+<p>This soccer game was where I met her.</p>
+<p>That’s me before I shaved my head.</p>
+<p>That’s someone I had a crush on, on the left.</p>
+<p>Oh, what’s her name? With the braces.</p>
+<p>That’s the quarterback again.</p>
+<p>That’s the big Irish kid. What’s his name? He was tall.</p>
+<p>God, he was the cat’s meow.</p>
+<p>Oh, that’s the guy who kneed me in my thigh coming down the stairs during a fire alarm in eighth grade. But he actually was a good friend of mine. We go back a long way. We respected each other. He had a heart attack.</p>
+<p>That’s me again. My hair grew out after I shaved it. Someone took a picture of me. Everyone wanted to borrow my camera. Hey, let me use it. Hey, let me take a picture. Hey, give it to me. I had contacts by then. Wow. Good: contacts in high school.</p>
+<p>This would be doing crazy close-up stuff on someone’s face, trying to be artistic. Whose eyeballs are those? Then that would be on the Charles River, and I’m looking out toward the old bridge down below. That’s no longer there. In photography class we were talking about shadow, light, composition, rule of thirds. That’s the back of my house underneath the back porch. This is a cat sitting on my mom’s red lounger. My mom still has that furniture. That’s our kitchen. That’s a frying pan. Some basil. A whisk in the sink. Pretty simple stuff.</p>
+<p>That’s my bedroom window with my lacrosse sticker. That’s my dad. My dad again. My dad and my brother. That’s my sister with a perm. That’s my dad sitting around in his house. He was cultivating marijuana in the closet under grow lights. We had no money back then. My backyard in Brookline. That’s my brother sleeping. You thought this was me, right? That’s back in the day when we talked on corded phones. We went off on a little hike. That’s my backpack. That’s leaves. Rocks. More rocks. Looking for that texture. Looking for that Ansel Adams shot. Rocks. More rocks. Really trying to find that perfect rock.</p>
+</section>
+<section>
+<h2>pp. 24–25</h2>
+<p>AW: And you never printed these images?</p>
+<p>MW: Oh no—I was in the darkroom printing the images. I still smell the chemicals on the negatives.</p>
+<p>AW: Did you enjoy your time in the darkroom? Or was it more something you needed to do in order to see the images?</p>
+<p>MW: That red lightbulb blew my mind. The color and the light in that room, when you’re mixing the chemicals and going through the process with the enlarger, then watching this thing materialize on a piece of Ilford, then hanging the print up to dry and looking at it. It was almost like recreating the moment. It was magical.</p>
+<p>I didn’t run to the darkroom because it was complicated and expensive. It wasn’t something I could just walk in and do on the fly. Shooting analogue, I had no idea whether I got anything. Two months would go by. I’d get back from a trip and have to figure out if I had enough money to pay for film processing. Then, of course, the whole roll would either be underexposed or out of focus, but I’d pick the one good picture I got and think, wow.</p>
+<p>I remember having to close the bathroom doors and put a towel at the bottom so the light didn’t leak in. My brother would be banging on the door, wanting to use the bathroom.</p>
+<p>AW: It’s a miracle.</p>
+<p>MW: I don’t know what it is with a camera . . . When you look through a lens and freeze it for posterity, it also burns into your memory bank, but in a very different way than any other memory. That photograph redefines that whole event in a much deeper way over time.</p>
+<p>AW: Your mother—my grandmother—had some</p>
+<p>photography shows in her lifetime. Did she influence your way of seeing?</p>
+<p>MW: My dad was actually the photographer first. I still have his cameras here. He had an old Pentax, he had a Minox, the little spy camera. He went around the world before he divorced my mom. I have probably 400 color slides from when he went to Thailand, Japan, India, the Taj Mahal. He shot all this stuff, but he never really shared it with us. We were too young. We were kids. When he passed away, I brought all that back. He actually mastered everything he did: the cello, many languages, cooking. He was never at half speed.</p>
+<p>My brother took photos too: street shots, architecture, humanity on the streets. He was doing much more artistic stuff. I was more of the sports photojournalist guy, the high school stuff.</p>
+<p>My mom was very supportive. She was out buying the film and the chemicals. She was shooting, but that seriousness where she saw herself as a real artist came much later in her life. She went out to Smith College after all her kids had gone off to study. That’s when she picked up a camera and started following in the footsteps of her kids. Maybe she was looking for that as a means to communicate with us. She took it to the level she did with a couple of gallery showings.</p>
+<p>Oh, here’s the three-ring binder with all of my negatives. I logged every negative with the names of people at the time.</p>
+<p>AW: And your handwriting is exactly the same. What does it feel like to look at these photos 50 years later?</p>
+<p>MW: I look at it with mixed emotions. On a family level, those were some tough years in my life. My parents were divorced. There wasn’t a lot of money in our lives. We didn’t own a car. We didn’t have a color TV. But when I look back, I’m amazed that it was a pretty rich, carefree</p>
+</section>
+<section>
+<h2>pp. 26–27</h2>
+<p>existence. All I had to do was wake up in the morning, go to school, go to a sports game, hang out, chase girls.</p>
+<p>I’m 65 years old. When was 1978? Forty-eight years ago. I think it’s an amazing chronicle of what Brookline High School was. There was no fentanyl, no gun violence, no metal detectors. It was just kids, carefree. We felt very safe. Your worst nightmare was maybe getting humiliated or getting tripped in the hallway and making</p>
+<p>a fool out of yourself. That was the biggest worry of your life.</p>
+<p>I look at the picture of the lacrosse coach and remember when I had pneumonia. I was in bed for two weeks and then I showed up, and he had taken all my lacrosse equipment with a bolt cutter. He cut it out of the locker and put it in a box to give away because he thought I was being irresponsible by not showing up for practice. He cut me from the team. I showed up with a medical note and he goes, It’s too late, man. I was really upset. I had a screaming fit with him. When I look at the picture now, I just think that he was probably making 50 bucks a week, being some crummy lacrosse coach.</p>
+<p>The photographs remind me of the house in Brookline. I was always trying to fix it. I had to paint it. That kitchen was miserable. My mom bought a new oven, but then my brother and I had a fight and he threw something at me and I threw something at him. We broke the handle on the new oven that had just been installed the day before, which made my mom cry. My dad divorced my mom and left and took all the furniture.</p>
+<p>I had aspirations in architecture. I was in a summer program at Harvard. There’s all the stuff that you don’t see: Coolidge Corner, the Brookline Booksmith, the South End with my mom, with her social work, driving a little VW Beetle, listening to Richie Havens and Miles Davis. The restaurant. There’s no record of any of that. These photos are really just the high school stuff, which is a fraction of the complexity of my life at that time.</p>
+<p>AW: Why did you think you stopped photographing?</p>
+<p>MW: You’re working and you don’t have time to set up a darkroom and have fun. Children come. There’s really no time for that. But pretty much almost throughout my entire life, I took a ton of photographs.</p>
+</section>
+<section>
+<h2>pp. 28–29</h2>
+<p>In graduate school I segued into the moving image. Then I was out shooting corporate documentaries for money. There was really no time to shoot photographs; I was working. We got that one camera where we shot probably 400 hours of wedding and honeymoon footage. Then the kids came, and it became just documenting the kids. Life got really complicated and busy. Then fast forward all the way: the kids grew up. At your high school graduation, you got mad because I was shooting with my phone. I didn’t bring my Nikon. I’m painfully aware of that, right? I remember those moments.</p>
+<p>My point is, I’ve always had a camera in my hands, or if I haven’t, I’ve longed for it. I have an aspirational intent of wanting to go out and photograph. I just bought this little light for my cell phone.</p>
+<p>It’s a function of time, too. I get up in the morning, everything aches and hurts. I’m old. I get through three cups of coffee. It’s not like I’m jumping out of bed to go catch a sunrise. That youthful fire for art, I don’t wanna say it diminishes—it matures to a point where it’s easier just to hire people and let them do it, and I’ll be the creative director from the background and tell them what I think. Let’s let these kids go do it, ‘cause they’re better at it than I am.</p>
+<p>In high school you take that test where you figure out your career directions. My results were: Explorer/Adventurer, Investigative Journalist, Architect/Urban Planner. I want to say something as stupid as astronaut or something. Always looking for something, somewhere else.</p>
+<p>AW: You get bored easily, right? Because I do.</p>
+<p>MW: I do. And I get bored with the mundane and the mediocre. Not that I want to do great stuff—more that it’s exhausting.</p>
+<p>AW: Okay, I have to go. I think I got what I needed.</p>
+<p>MW: Okay.</p>
+<p>AW: Bye, Dad.</p>
+<p>MW: But did you get what you needed? I feel like I didn’t say anything.</p>
+<p>AW: I have to transcribe it, but yeah, I think so.</p>
+<p>MW: Okay. Don’t embarrass me.</p>
+<p>AW: No, I won’t. We’ll publish the most relevant parts.</p>
+<p>MW: Thank you.</p>
+<p>AW: Thank you. Love you.</p>
+<p>MW: Love you.</p>
+</section>
+<section>
+<h2>pp. 30–31</h2>
+<p>LAUREN LEE</p>
+<p>Cause of the Cause</p>
+<p>In the office are hundreds of thousands of papers that will never be looked at. I try, in my spare time, to pick out a section for organizing, but it’s guaranteed that Philip will burst through the door before I have a chance to settle down with a stack of folders. Because of this town’s murders, double-crossing syndicates, and municipal corruption, neither Philip nor I can rely on a few nights in a row of sleep, let alone an afternoon of quiet work.</p>
+<p>Today, around two o’clock, a woman in furs brings the door slamming just in time for Philip to tuck in behind her, brushing against the pom-pom trails of her white hat. They seem distinct from one another, the women, each with a different kind of beauty. She today is round-cheeked, barely out of her teenage years, with features not yet diffused by an infinitesimal gradient of foundation. Her nose is even shadowed a tad too severely. She turns to Philip, who is wiry, weary, as usual. Before either of them speak, I step around the desk to ask if they would like coffee. “Thank you, Mariel. The lady takes it black,” says Philip.</p>
+<p>The woman scoffs. She leans herself against the edge of my desk, regarding my gray skirt-suit ever fleetingly. As she slides her palm back, some pages fall onto the ground.</p>
+<p>Toward my feet comes a picture of a plaza with a fountain, a newspaper clipping. Bending down, I bring it closer to my face. On the right-hand side of the image are two women. One is older, hunched, with a cane. And—it’s remarkable—the other, arm in hers, is me. Or a person with my exact likeness. This woman, perhaps myself, reaches a hand toward the face of the older one, or maybe she gestures at the fountain.</p>
+<p>“Why, that’s the old setup of Lovett Gardens,” says today’s woman, petting her fox scarf.</p>
+<p>“Sure,” says Philip, “I suspect I’m the only one here old enough to have been there.”</p>
+<p>The printing is too blunt to make out where any gaze is directed. People are dressed in breezy clothes, and a man holds his palm against his forehead like a visor. Clearly, the two women are familiar with each other. But no, I do not recognize the older one. Just the figure of myself beside her, with the bowed legs and the broad stance inherited from my mother.</p>
+<p>“We’re about the same age, aren’t we?” today’s woman says to me.</p>
+<p>As a kid I was often hurting in the calves and hips, before we learned I needed insoles. Yet there was an immense pleasure in running, especially on summer days, prancing in soreness on the splintery planks of the piers. Along the boardwalk were sold all kinds of fruits and candies. Then, one afternoon, after dozens of summers, there was this old lady, pushing her way through arthritis by my side. At the newly opened plaza in Lovett Gardens.</p>
+<p>Later on the place would become derelict. We could almost tell at the time: it was the kind of thing too demanding to keep up unless all relations were in best order. “Which they most often aren’t,” she said.</p>
+</section>
+<section>
+<h2>pp. 32–33</h2>
+<p>“Yes, take the fig tree,” I said, pointing. “It’s already crowded with mites.”</p>
+<p>Everyone in this town knows that if you walk long enough, eventually you will reach a carousel. In the early part of the century the counties in this region built a great number of them, and continued to do so out of commercial and civic proclivity, every several years. So long as you can endure the heat and the movement: at some point you will find a ring of painted horses impaled on brass poles, their mouths extended. Sometimes there will be children and an operator to spin them. Other times the machine will be shuttered.</p>
+<p>The files in the office grow bigger each year. What we need to do is hire a few kids from the accounting college down the street to help us make decisions. At least that’s what Philip and I tell each other. We both know that sometimes, for the most puzzling of cases, the answer lies amid these papers. To disturb the stalagmite mass, to try to carve order into it, would be like renouncing our faiths, different as they are.</p>
+</section>
+<section>
+<h2>pp. 34–35</h2>
+<p>SELENE MEDINA</p>
+<p>Hand Through a Lens</p>
+<p>This is a photograph of my hand. Throughout the years, I’ve captured my hands in various photographs. In some, my palm faces the camera—in others, my hand holds a tangerine. I would consider them all self-portraits. In these moments, I’ve never had a specific reason for doing it—but upon reflection, my self-portraits do often involve my hand(s). These are ways of giving up a little of myself to those who will see my photographs. As in, “this is me, but this is all you can see”. Even with this sort of hiding, hands reveal so much. My hands, much like my voice, allow me to communicate with people.</p>
+<p>As I sit and look at this photograph, I start to understand what this choice means to me. In it, the palm of my hand is still hidden, and it’s protecting my belly, my body. My knuckles protrude slightly, and my ring finger lies directly on the button of my jacket. Our hands say much about us, even when we use them as a means of protection. Photographing my hands constructs a point of connection with the viewer. Often, we use our hands to connect with others. We shake hands, we hold hands, we wave hello and goodbye. I run my fingers through my sister’s hair, and I rest my palm on my friend’s cheek. These are all varying ways of connecting—some superficial; others deep, profound. Photographing my hands allows me to do both. I can literally reach other people while also revealing myself in an authentic way. The photographs that show my hands forge a connection with myself and create an opening to myself for the people who will see the photograph.</p>
+</section>
+<section>
+<h2>pp. 36–37</h2>
+<p>KENZIE FLOYD</p>
+<p>Time Travel</p>
+<p>You can wander wander wander wander to the top of Griffith Observatory. There are many paths to take you there, hidden staircases the whole way up, impossible to find on maps. The first time Alex and I take them, there is an eclipse just minutes away. We are climbing in the heat, racing against the invisible sky clock. We have cardboard glasses from a gas station in our pockets; the whole city has been passing them out.</p>
+<p>This is how it happens. Heads down, winding up the stairs, we see a shadow in the shape of a crescent on the ground below us. Moving shadows, made by us and the swaying trees, have suddenly turned into tiny moons. Every bit of light reflected on the stair, a tiny crescent. Hundreds of them. It’s happening! Look! Someone else is coming down the stairs and points it out. We put on our gas station glasses and turn to face the sun behind us. Do you see it? A crescent in the sky, the source. From it, fractured crescents scatter all across the city, spilling over all the steps, which we now climb with renewed ambition, two at a time, the crescents signaling that the full eclipse is just seconds away.</p>
+<p>At the top of the hill, we are rewarded with a sea of people, craned faces, glasses on. Did all of them get theirs at gas stations, too? The audience is sitting for the spectacle, the Earth Stage. Someone counts down. People are checking</p>
+<p>their watches. With their glasses on, the spectators are frozen: mouths open, heads turned upward to the sky, nobody saying anything but sometimes reaching to grasp the hand of the person next to them. A reporter buzzes around seriously, holding a tiny microphone up to the mouths, asking people what they are seeing. We take turns looking, bumping into friends, taking photos of the crowds of craned necks. People talk excitedly when they take off their glasses and look at one another in awe, but there is something different that happens when they stare directly at it. Full immobilization. Mouth open. I have that feeling too, when I look. Like everything else gets quiet. Here we all are, doing something together, and doing something that feels alone.</p>
+<p>I look for a really long time. My mouth is probably open. The crescents get smaller and smaller until they are gone, signaling the end. Just normal reflections on the ground now. We walk back down the hidden staircases, talking about monks. We hold up my phone to our ears and listen to Björk singing about throwing things off a mountain every morning so that she doesn’t throw herself off. This is the most romantic song in the world.</p>
+<p>The rest of the day, I think about the crescent shadows. You can’t look at an eclipse directly, you will hurt yourself, there are lots of tweets about this. You need glasses, and you need a gas station. You need someone else to help you, something else to look through and see it in parts reflected everywhere. Here I am stepping on it, here it is reflecting on my skin.</p>
+<p>“Eclipse” is rooted in words that mean things like abandonment, cessation, omission. The absence, the darkness, is what people probably thought was the end of the world and its warmth and time and light. We can’t look at it directly; it would be too much for the naked eye to handle. Turn around, keep it at your back. There it is, behind you. Here it is, in front of you, broken into a hundred smaller pieces.</p>
+</section>
+<section>
+<h2>pp. 38–39</h2>
+<p>The next total eclipse in North America won’t take place until 2044.</p>
+<p>In 2044 I will be 51 years old. My best friend will have been dead for 19 years by then. Other people will be dead, too.</p>
+<p>I wonder if I will be able to look at any of it in the eye by then.</p>
+<p>Last week my mom’s best friend gave me a tip: you can see constellations best by not looking at them directly. Try to find them with your peripheral vision. Look somewhere else and you will see them start to emerge. To see clearly, we sometimes have to look in a different direction, look through something else, to not look at all. I can only talk to my mom through her best friend, only feel my own best friend by time-traveling through photos of someone else, see a space phenomenon by watching a stranger hold a cereal box up to their face and somehow this all adds up to the same thing. I squint again into the sky.</p>
+</section>
+<section>
+<h2>Colophon</h2>
+<p>ALEX WESTFALL: SEE THROUGH</p>
+<p>Printed in Canada by Colour Code. Edition of 100.</p>
+<p>With contributions by Marian Chudnovsky, Stella Rae Binion, Kenzie Floyd, Lauren Lee, Selene Medina, Alex Westfall and Matthew Westfall.</p>
+<p>Edited by Talia Markowitz, Genevieve Nollinger, and Alex Westfall.</p>
+<p>Designed by Tess Davey.</p>
+<p>This edition is produced in conjunction with See Through, Alex Westfall’s inaugural solo exhibition at Isolde.</p>
+<p>Published by Isolde NYC, 2026 © Isolde and the authors</p>
+<p>Isolde 55 West 8th Street, Fifth Floor New York, NY 10011 www.isolde.nyc</p>
+</section>
+<section>
+<h2>Back cover</h2>
+<p>ISOLDE is an artist-run space for exhibitions, performances, and experimental work. We platform emerging artists whose practices do not fit definitively into traditional mediums.</p>
+</section>
+</article>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { i: 0, zoomed: false };
+  views = [
+    { name: 'cover', alt: 'Front cover', short: 'Cover', label: 'Cover' },
+    { name: 'spread-01', alt: 'Contributor bios and title page', short: '1', label: 'p. 1' },
+    { name: 'spread-02', alt: 'Photo spread, pages 2–3', short: '2–3', label: 'pp. 2–3' },
+    { name: 'spread-03', alt: 'Contents, pages 4–5', short: '4–5', label: 'pp. 4–5' },
+    { name: 'spread-04', alt: 'Marian Chudnovsky, An Imperfect Memory, pages 6–7', short: '6–7', label: 'pp. 6–7' },
+    { name: 'spread-05', alt: 'Marian Chudnovsky, An Imperfect Memory, pages 8–9', short: '8–9', label: 'pp. 8–9' },
+    { name: 'spread-06', alt: 'Marian Chudnovsky, An Imperfect Memory, pages 10–11', short: '10–11', label: 'pp. 10–11' },
+    { name: 'spread-07a', alt: 'Pages 12–13 with the tipped-in poem "residue (origin)" lying over page 13', short: '12–13', label: 'pp. 12–13 · insert' },
+    { name: 'spread-07b', alt: 'Pages 12–13 with the insert turned, its blank back over page 12', short: '12–13', label: 'pp. 12–13 · insert turned' },
+    { name: 'spread-08', alt: 'Double Negative: a conversation between Alex Westfall and her father Matthew, pages 14–15', short: '14–15', label: 'pp. 14–15' },
+    { name: 'spread-09', alt: 'Double Negative, pages 16–17', short: '16–17', label: 'pp. 16–17' },
+    { name: 'spread-10', alt: 'Double Negative, pages 18–19', short: '18–19', label: 'pp. 18–19' },
+    { name: 'spread-11', alt: 'Double Negative, pages 20–21, with negative index sheets', short: '20–21', label: 'pp. 20–21' },
+    { name: 'spread-12', alt: 'Double Negative, pages 22–23', short: '22–23', label: 'pp. 22–23' },
+    { name: 'spread-13', alt: 'Double Negative, pages 24–25', short: '24–25', label: 'pp. 24–25' },
+    { name: 'spread-14', alt: 'Double Negative, pages 26–27, with a photograph of a wicker chair and an exhibition postcard', short: '26–27', label: 'pp. 26–27' },
+    { name: 'spread-15', alt: 'Double Negative, pages 28–29', short: '28–29', label: 'pp. 28–29' },
+    { name: 'spread-16', alt: 'Lauren Lee, Cause of the Cause, pages 30–31', short: '30–31', label: 'pp. 30–31' },
+    { name: 'spread-17', alt: 'Cause of the Cause, pages 32–33, with two photographs', short: '32–33', label: 'pp. 32–33' },
+    { name: 'spread-18', alt: 'Selene Medina, Hand Through a Lens, pages 34–35, with a photograph of a hand resting on a belly', short: '34–35', label: 'pp. 34–35' },
+    { name: 'spread-19', alt: 'Kenzie Floyd, Time Travel, pages 36–37', short: '36–37', label: 'pp. 36–37' },
+    { name: 'spread-20', alt: 'Time Travel, pages 38–39, with a photograph of a figure from behind and a field of stars', short: '38–39', label: 'pp. 38–39' },
+    { name: 'spread-21', alt: 'Colophon on page 40 and the inside back cover with the Isolde emblem', short: '40', label: 'Colophon' },
+    { name: 'back-cover', alt: 'Back cover', short: 'Back', label: 'Back cover' },
+  ].map(v => ({ ...v, src: `pages/${v.name}-screen.jpg?v=c35`, full: `pages/${v.name}.jpg?v=c35`, thumb: `pages/${v.name}-thumb.jpg?v=c35` }));
+  h = {
+    prev: () => this.go(this.state.i - 1),
+    next: () => this.go(this.state.i + 1),
+    openZoom: () => this.setState({ zoomed: true }),
+    closeZoom: e => { e.stopPropagation(); this.setState({ zoomed: false }); },
+    fullscreen: () => document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.(),
+    onTouchStart: e => { this.tx = e.touches[0].clientX; },
+    onTouchEnd: e => { const d = e.changedTouches[0].clientX - this.tx; if (Math.abs(d) > 40) this.go(this.state.i + (d < 0 ? 1 : -1)); },
+    dragStart: e => { const el = e.currentTarget; this.drag = { x: e.clientX, y: e.clientY, l: el.scrollLeft, t: el.scrollTop }; },
+    dragMove: e => { if (!this.drag) return; const el = e.currentTarget; el.scrollLeft = this.drag.l - (e.clientX - this.drag.x); el.scrollTop = this.drag.t - (e.clientY - this.drag.y); },
+    dragEnd: () => { this.drag = null; },
+  };
+  gos = this.views.map((_, k) => () => this.go(k));
+  sizes = 'min(calc(100vw - 160px), calc((100dvh - 190px) * 1.08))';
+  ss(v) { const c = v.name === 'cover' || v.name === 'back-cover'; return c ? `${v.src} 763w, ${v.full} 1302w` : `${v.src} 1511w, ${v.full} 2560w`; }
+  sz(v) { return v.name === 'cover' || v.name === 'back-cover' ? 'min(calc(100vw - 160px), calc((100dvh - 190px) * 0.545))' : this.sizes; }
+  setSrc(el, v) { if (!el) return; el.sizes = this.sz(v); const ss = this.ss(v); if (el.getAttribute('srcset') !== ss) el.setAttribute('srcset', ss); if (el.getAttribute('src') !== v.src) el.setAttribute('src', v.src); }
+  ar(v) { return v.name === 'cover' || v.name === 'back-cover' ? 1302 / 2390 : 2560 / 2372; }
+  fit() { const el = this.mainEl, box = el && el.parentElement; if (!box) return; const W = box.clientWidth, H = box.clientHeight; if (!W || !H) return; const a = this.ar(this.views[this.state.i]); let w = W, h = W / a; if (h > H) { h = H; w = H * a; } el.style.width = Math.floor(w) + 'px'; el.style.height = Math.floor(h) + 'px'; el.sizes = Math.ceil(w) + 'px'; }
+  mainRefFn = el => { this.mainEl = el; if (el && !this.ro && window.ResizeObserver) { this.ro = new ResizeObserver(() => this.fit()); this.ro.observe(el.parentElement); } this.setSrc(el, this.views[this.state.i]); this.fit(); };
+  preload(i) { [i + 1, i - 1, i + 2].forEach(k => { const v = this.views[k]; if (!v || v._pre) return; v._pre = 1; const im = new Image(); im.decoding = 'async'; im.sizes = this.sz(v); im.srcset = this.ss(v); im.src = v.src; }); }
+  componentDidUpdate() { this.setSrc(this.mainEl, this.views[this.state.i]); this.fit(); }
+  componentDidMount() {
+    document.title = 'Alex Westfall: See Through Booklet';
+    this.onResize = () => this.setState({ narrow: window.innerWidth < 640 });
+    this.onResize(); window.addEventListener('resize', this.onResize);
+    setTimeout(() => this.preload(0), 400);
+    this.onKey = e => {
+      if (e.key === 'ArrowRight') this.go(this.state.i + 1);
+      else if (e.key === 'ArrowLeft') this.go(this.state.i - 1);
+      else if (e.key === 'Escape') this.setState({ zoomed: false });
+    };
+    window.addEventListener('keydown', this.onKey);
+  }
+  navRef = el => { this.nav = el; };
+  centerThumb() { requestAnimationFrame(() => { const n = this.nav || document.querySelector('nav'); const bs = n && n.querySelectorAll('button'); const b = bs && bs[this.state.i]; if (!b) return;
+    const nr = n.getBoundingClientRect(), br = b.getBoundingClientRect(); n.scrollLeft += (br.left + br.width / 2) - (nr.left + nr.width / 2); }); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); window.removeEventListener('resize', this.onResize); this.ro && this.ro.disconnect(); }
+  refs = {};
+  srcRef(src) { if (!src) return null; return this.refs[src] ||= el => { if (el && el.getAttribute('src') !== src) el.setAttribute('src', src); }; }
+  go(n) { if (n >= 0 && n < this.views.length) this.setState({ i: n }, () => { this.centerThumb(); this.preload(n); }); }
+  renderVals() {
+    const { i, zoomed } = this.state, n = this.views.length, cur = this.views[i];
+    const P = { imgShadow: '0 1px 2px rgba(0,0,0,0.12),0 18px 40px -12px rgba(0,0,0,0.28)', matPad: '0', matBg: 'transparent', imgTilt: 'none' };
+    return {
+      bg: '#e4e5e7', ink: '#1d2433',
+      current: cur, mainRef: this.mainRefFn, wide: !this.state.narrow, narrow: !!this.state.narrow,
+      cols: this.state.narrow ? 'minmax(0,1fr)' : '64px minmax(0,1fr) 64px', mainPad: this.state.narrow ? '12px 8px' : '20px 12px',
+      canFull: typeof document !== 'undefined' && !!document.fullscreenEnabled, zoomRef: zoomed ? this.srcRef(cur.full) : null, label: `${cur.label} · ${i + 1}/${n}`,
+      atStart: i === 0, atEnd: i === n - 1,
+      prevOpacity: i === 0 ? 0 : 1, nextOpacity: i === n - 1 ? 0 : 1,
+      ...this.h,
+      showThumbs: true, showTitle: true, thumbH: '52px', ...P, navRef: this.navRef,
+      thumbs: this.views.map((v, k) => ({ ref: this.srcRef(v.thumb), alt: v.alt, short: v.short, go: this.gos[k], outline: k === i ? '1.5px solid currentColor' : '1.5px solid transparent', opacity: k === i ? 1 : 0.55 })),
+      zoomed, zoomWidth: (cur.name === 'cover' || cur.name === 'back-cover') ? 'min(1354px, 160vw)' : 'min(2690px, 220vw)',
+    };
+  }
+}
+</script>
+</body>
+</html>
